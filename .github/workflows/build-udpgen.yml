@@ -1,0 +1,25 @@
+---
+name: build-udpgen
+run-name: Build udpgen
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: quay.io/bluebird/base-builder:ubuntu.0.1.5.b8
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: |
+          mkdir build && cd build
+          cmake ..
+          make
+      - name: Persist build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: udpgen
+          path: |
+            build/udpgen
