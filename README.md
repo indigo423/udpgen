@@ -1,6 +1,4 @@
-# udpgen [![CircleCI](https://circleci.com/gh/OpenNMS/udpgen.svg?style=svg)](https://circleci.com/gh/OpenNMS/udpgen)
-
-## Overview
+# UDPGen [![build-udpgen](https://github.com/indigo423/udpgen/actions/workflows/build-udpgen.yml/badge.svg)](https://github.com/indigo423/udpgen/actions/workflows/build-udpgen.yml)
 
 This tool was written to help stress test OpenNMS' UDP protocol handling by generating large volumes of traffic.
 
@@ -10,7 +8,7 @@ It currently supports generating:
 * Netflow 5 flows
 * Netflow 9 flows
 
-The tool does not currently give fine grained control over the payload generation.
+The tool does not currently give fine-grained control over the payload generation.
 
 ## Building
 
@@ -72,4 +70,3 @@ Generate as many Netflow 9 flows as possible using a single thread pinned to the
 ```sh
 taskset -c 0 ./udpgen -x netflow9 -r 0
 ```
-
